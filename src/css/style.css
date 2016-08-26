@@ -1,0 +1,51 @@
+body {
+	text-align: center;
+}
+
+.modal {
+	width: 800px;
+	position: relative;
+}
+
+.modal-header, h4, .close {
+	background-color: #5cb85c;
+	color: white !important;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.modal-footer {
+	background-color: #f9f9f9;
+}
+
+.form-group {
+	margin: 30px;
+}
+
+.player-button {
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 80px;
+	height: 83px;
+	display: inline-block;
+}
+
+.char-boy-img {
+	background-image: url("../images/char-boy.png");
+}
+
+.char-cat-girl-img {
+	background-image: url("../images/char-cat-girl.png");
+}
+
+.char-horn-girl-img {
+	background-image: url("../images/char-horn-girl.png");
+}
+
+.char-pink-girl-img {
+	background-image: url("../images/char-pink-girl.png");
+}
+
+.char-princess-girl-img {
+	background-image: url("../images/char-princess-girl.png");
+}

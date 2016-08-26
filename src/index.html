@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Effective JavaScript: Frogger</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/constants.js"></script>
+	<script src="js/resources.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body>
+	<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+
+				<div class="modal-header" style="padding:35px 50px;">
+					<h3 class="modal-title" id="myModalLabel"><span>Classic Arcade Game</span></h3>
+				</div>
+
+				<div class="modal-body" style="padding:40px 50px; text-align: left;">
+					<div>
+						<p>Please choose the numbers</p>
+						<p>(Invalid numbers will be changed to default or previous numbers.)</p>
+					</div>
+					<form id="reset-form" role="form">
+						<div class="form-group">
+							<label for="numRows" id="numRowsLabel">Number of Rows</label>
+							<input type="text" class="form-control" id="numRows">
+						</div>
+						<div class="form-group">
+							<label for="numCols" id="numColsLabel">Number of Columns</label>
+							<input type="text" class="form-control" id="numCols">
+						</div>
+						<div class="form-group">
+							<label for="numEnemies">Number of Enemies</label>
+							<input type="text" class="form-control" id="numEnemies">
+						</div>
+						<div class="form-group">
+							<label for="numEnemies">Select the Player</label>
+							<span id="player-img">      Char Boy</span>
+						</div>
+
+						<div class="row flex btn-group" data-toggle="buttons">
+							<button class="btn toggle" id="char-boy" name="Boy">
+								<span class="sr-only"></span>
+								<span class="player-button char-boy-img"></span>
+							</button>
+							<button class="btn toggle" id="char-cat-girl" name="Cat Girl">
+								<span class="sr-only"></span>
+								<span class="player-button char-cat-girl-img"></span>
+							</button>
+							<button class="btn toggle" id="char-horn-girl" name="Horn Girl">
+								<span class="sr-only"></span>
+								<span class="player-button char-horn-girl-img"></span>
+							</button>
+							<button class="btn toggle" id="char-pink-girl" name="Pink Girl">
+								<span class="sr-only"></span>
+								<span class="player-button char-pink-girl-img"></span>
+							</button>
+							<button class="btn toggle" id="char-princess-girl" name="Princess Girl">
+								<span class="sr-only"></span>
+								<span class="player-button char-princess-girl-img"></span>
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+						<span class="glyphicon glyphicon-stop"></span> Exit
+					</button>
+
+					<button onclick="app.reset()" type="submit" class="btn btn-success pull-right" data-dismiss="modal">
+						<span class="glyphicon glyphicon-play"></span> Play
+					</button>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<script src="js/engine.js"></script>
+	<script>
+		document.querySelector("#numRowsLabel").innerHTML = "Number of Rows ( >= " + app.minNumRows+ " and <= " + app.maxNumRows + " )";
+		document.querySelector("#numColsLabel").innerHTML = "Number of Columns ( >= " + app.minNumCols+ " and <= " + app.maxNumCols + " )";
+		document.querySelector("#numRows").setAttribute("value", app.numRows);
+		document.querySelector("#numCols").setAttribute("value", app.numCols);
+		document.querySelector("#numEnemies").setAttribute("value", app.numEnemies);
+		$("#myModal").modal('show');
+		$(".btn-group > button.btn").on("click", function () {
+			name = this.name;
+			document.querySelector("#player-img").innerHTML = "      " + name;
+			window.app.playerImage = "images/" + this.id + ".png";
+		});
+	</script>
+</body>
+</html>
