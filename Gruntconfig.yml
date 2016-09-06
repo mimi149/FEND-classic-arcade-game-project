@@ -1,0 +1,11 @@
+src: src/
+dest: dist/
+
+jsSrcDir: src/js/
+jsDir: dist/js/
+
+cssSrcDir: src/css/
+cssDir: dist/css/
+
+imgSrcDir: src/images_src/
+imgDir: src/images/

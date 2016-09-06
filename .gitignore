@@ -2,5 +2,5 @@
 node_modules/*
 src/images_src/*
 dist/*
-
+*.zip
 

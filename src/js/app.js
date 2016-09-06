@@ -43,7 +43,7 @@
 	};
 
 	app.Enemy.prototype.collide = function () {
-		if (app.player.row != this.y / constants.ROW_SIZE)
+		if (app.player.row !== this.y / constants.ROW_SIZE)
 			return false;
 		else if ((this.x >= (app.player.x - constants.COL_SIZE + constants.PLAYER_MARGIN)) && (this.x <= (app.player.x + constants.COL_SIZE - constants.PLAYER_MARGIN)))
 				return true;

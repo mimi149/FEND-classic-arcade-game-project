@@ -1,4 +1,3 @@
-
 var constants = {
 	COL_SIZE: 101,
 	ROW_SIZE: 83,
